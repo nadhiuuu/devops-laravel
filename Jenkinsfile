@@ -1,5 +1,5 @@
 // deploy env prod
-docker.image('nadhiuuu/alpine-rsync:1.1').inside('-u root') {
+docker.image('agung3wi/alpine-rsync:1.1').inside('-u root') {
     sshagent (credentials: ['ssh-pwd']) {
         sh 'mkdir -p ~/.ssh'
         sh 'ssh-keyscan -H "$PROD_HOST" > ~/.ssh/known_hosts'
