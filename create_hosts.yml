@@ -1,0 +1,13 @@
+---
+- name: Create hosts file
+  hosts: localhost
+  tasks:
+    - name: Add development host
+      lineinfile:
+        path: hosts
+        line: dev.kelasdevops.xyz
+
+    - name: Add production host
+      lineinfile:
+        path: hosts
+        line: prod.kelasdevops.xyz
