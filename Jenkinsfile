@@ -7,7 +7,9 @@ pipeline {
                 script {
                     docker.image('agung3wi/alpine-rsync:1.1').inside {
                         sshagent(['ssh-pwd']) {
-                            sh 'echo Deploy Success'
+                            sh '''
+                            rsync -avz --delete ./ nadhiuuu@dev.kelasdevops.xyz:/home/nadhiuuu/devops-laravel
+                            '''
                         }
                     }
                 }
